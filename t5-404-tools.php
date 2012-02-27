@@ -94,9 +94,9 @@ class T5_404_Tools
 	protected function mail_headers()
 	{
 		$headers = array (
-			'From' => 'Error-Messenger <' . get_option( 'admin_email' ) . '>',
+			'From:Error-Messenger <' . get_option( 'admin_email' ) . '>',
 			// For software with automatic mailing list detection like Opera.
-			'List-Id' => '"404" 404.List'
+			'List-Id:"404" 404.List'
 		);
 		$headers = apply_filters( 't5_404_mail_headers', $headers );
 		return $headers;
