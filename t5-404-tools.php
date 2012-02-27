@@ -37,10 +37,15 @@ declare ( encoding = 'UTF-8' );
 // Wait until last useful moment.
 add_filter( '404_template', array ( 'T5_404_Tools', 'init' ) );
 
+/**
+ * Enhance 404 request handling. Besides that, just a poor man’s namespace. :)
+ *
+ * @author Thomas Scholz, <info@toscho.de>
+ */
 class T5_404_Tools
 {
 	/**
-	 * Creates a new instance. Called on 'after_setup_theme'.
+	 * Creates a new instance. Called on '404_template'.
 	 *
 	 * @param  string $template The template file. We pass this through.
 	 * @see    __construct()
