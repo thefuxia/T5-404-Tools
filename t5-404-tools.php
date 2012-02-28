@@ -64,8 +64,8 @@ class T5_404_Tools
 	 */
 	public function __construct()
 	{
-		$this->is_image_request()  and $this->serve_404_image();
 		! $this->is_crawler_test() and $this->send_notice();
+		$this->is_image_request()  and $this->serve_404_image();
 	}
 
 	/**
