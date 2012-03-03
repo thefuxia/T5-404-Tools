@@ -222,7 +222,7 @@ class T5_404_Tools
 			$type = pathinfo( $path, PATHINFO_EXTENSION );
 		}
 
-		header( "Content-Type: img/$type" );
+		header( "Content-Type: image/$type" );
 		require $path;
 		exit;
 	}
