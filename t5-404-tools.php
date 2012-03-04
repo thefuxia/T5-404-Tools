@@ -37,7 +37,7 @@ declare ( encoding = 'UTF-8' );
 
 // Wait until last useful moment.
 add_filter( '404_template', array ( 'T5_404_Tools', 'init' ) );
-
+add_filter( 'plugin_row_meta', array( 'T5_404_Tools', 'add_feedback_link' ), 10, 2 );
 /**
  * Enhance 404 request handling. Besides that, just a poor man’s namespace. :)
  *
@@ -258,5 +258,24 @@ class T5_404_Tools
 		{
 			return TRUE;
 		}
+	}
+
+	/**
+	 * Adds a link to the GitHub bug tracker.
+	 *
+	 * @param  array  $links Already existing links.
+	 * @return string
+	 */
+	public static function add_feedback_link( $links, $file )
+	{
+		static $base_name = '';
+		'' == $base_name and $base_name = plugin_basename( __FILE__ );
+
+		if ( $base_name == $file )
+		{
+			$links[]  = "<a href='https://github.com/toscho/T5-404-Tools/issues'>Send feedback</a>";
+		}
+
+		return $links;
 	}
 }
