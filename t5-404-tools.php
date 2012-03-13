@@ -281,9 +281,9 @@ class T5_404_Tools
 	public static function add_feedback_link( $links, $file )
 	{
 		static $base_name = '';
-		'' == $base_name and $base_name = plugin_basename( __FILE__ );
+		'' === $base_name and $base_name = plugin_basename( __FILE__ );
 
-		if ( $base_name == $file )
+		if ( $base_name === $file )
 		{
 			$links[]  = "<a href='https://github.com/toscho/T5-404-Tools/issues'>Send feedback</a>";
 		}
