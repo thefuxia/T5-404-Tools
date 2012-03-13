@@ -143,7 +143,7 @@ class T5_404_Tools
 	 */
 	protected function get_request_uri()
 	{
-		$scheme = 'http' . ( empty ( $_SERVER['HTTPS'] ) ? '' : 's' ) . '://';
+		$scheme = 'http' . ( is_ssl() ? '' : 's' ) . '://';
 		return $scheme . $_SERVER['HTTP_HOST']
 			. rawurldecode( $_SERVER['REQUEST_URI'] );
 	}
