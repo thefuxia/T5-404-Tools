@@ -4,7 +4,7 @@ declare ( encoding = 'UTF-8' );
  * Plugin Name: T5 404 Tools
  * Plugin URI:  https://github.com/toscho/T5-404-Tools
  * Description: Sends an email to the admin email adress for each 404 request not coming from Google or Yahoo. Serves a 404 image for image requests.
- * Version:     2012.03.04
+ * Version:     2012.03.13
  * Required:    3.3
  * Author:      Thomas Scholz <info@toscho.de>
  * Author URI:  http://toscho.de
