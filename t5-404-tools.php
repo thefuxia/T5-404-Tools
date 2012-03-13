@@ -46,8 +46,9 @@ add_filter( 'plugin_row_meta', array( 'T5_404_Tools', 'add_feedback_link' ), 10,
 class T5_404_Tools
 {
 	/**
-	 * Creates a new instance. Called on '404_template'.
+	 * Creates a new instance.
 	 *
+	 * @wp-hook 404_template
 	 * @param  string $template The template file. We pass this through.
 	 * @see    __construct()
 	 * @return string $template
@@ -61,6 +62,7 @@ class T5_404_Tools
 	/**
 	 * Constructor. Does all the work.
 	 *
+	 * @wp-hook 404_template
 	 * @return void
 	 */
 	public function __construct()
@@ -72,6 +74,7 @@ class T5_404_Tools
 	/**
 	 * Sends an email.
 	 *
+	 * @wp-hook 404_template
 	 * @uses   apply_filters() 't5_404_recipient' and 't5_404_subject'
 	 * @return void
 	 */
@@ -89,6 +92,7 @@ class T5_404_Tools
 	/**
 	 * Create basic mail headers.
 	 *
+	 * @wp-hook 404_template
 	 * @uses   apply_filters() 't5_404_mail_headers'
 	 * @return array
 	 */
@@ -106,6 +110,7 @@ class T5_404_Tools
 	/**
 	 * Collect request data and create a message body.
 	 *
+	 * @wp-hook 404_template
 	 * @uses   apply_filters() 't5_404_mail_body'
 	 * @return string
 	 */
@@ -139,6 +144,7 @@ class T5_404_Tools
 	/**
 	 * Full, clickable 404 URI.
 	 *
+	 * @wp-hook 404_template
 	 * @return string
 	 */
 	protected function get_request_uri()
@@ -151,6 +157,7 @@ class T5_404_Tools
 	/**
 	 * Collect data from different server variables.
 	 *
+	 * @wp-hook 404_template
 	 * @uses   apply_filters() 't5_404_server_fields'
 	 * @return array
 	 */
@@ -176,6 +183,7 @@ class T5_404_Tools
 	/**
 	 * Collect data from different IP address fields.
 	 *
+	 * @wp-hook 404_template
 	 * @uses   apply_filters() 't5_404_ip_fields' and 't5_404_ip_check_url'
 	 * @return array
 	 */
@@ -205,6 +213,7 @@ class T5_404_Tools
 	/**
 	 * Loads and sends a 404 image. Stops any further processing.
 	 *
+	 * @wp-hook 404_template
 	 * @uses   apply_filters() 't5_404_img_path' and 't5_404_img_type'
 	 * @return void
 	 */
@@ -231,6 +240,7 @@ class T5_404_Tools
 	/**
 	 * Checks $_SERVER['REQUEST_URI'] if it searches for an image.
 	 *
+	 * @wp-hook 404_template
 	 * @return bool
 	 */
 	protected function is_image_request()
@@ -245,6 +255,7 @@ class T5_404_Tools
 	/**
 	 * Checks if a crawler from Google or Yahoo is testing your 404 status header.
 	 *
+	 * @wp-hook 404_template
 	 * @return bool
 	 */
 	protected function is_crawler_test()
@@ -263,6 +274,7 @@ class T5_404_Tools
 	/**
 	 * Adds a link to the GitHub bug tracker.
 	 *
+	 * @wp-hook plugin_row_meta
 	 * @param  array  $links Already existing links.
 	 * @return string
 	 */
