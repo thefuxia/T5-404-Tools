@@ -222,7 +222,7 @@ class T5_404_Tools
 		// Try to find a 404 image in the current theme.
 		$path = locate_template( array ( '404.png', '404.jpg', '404.gif' ) );
 
-		if ( '' == $path )
+		if ( '' === $path )
 		{
 			$path = apply_filters( 't5_404_img_path', __DIR__ . '/404.png' );
 			$type = apply_filters( 't5_404_img_type', 'png' );
