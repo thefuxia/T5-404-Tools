@@ -204,7 +204,7 @@ class T5_404_Tools
 
 		if ( '' === $path )
 		{
-			$path = apply_filters( 't5_404_img_path', __DIR__ . '/404.png' );
+			$path = apply_filters( 't5_404_img_path', plugin_dir_path( __FILE__ ) . '404.png' );
 			$type = apply_filters( 't5_404_img_type', 'png' );
 		}
 		else
