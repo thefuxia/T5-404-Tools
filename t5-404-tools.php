@@ -1,5 +1,4 @@
 <?php # -*- coding: utf-8 -*-
-declare ( encoding = 'UTF-8' );
 /**
  * Plugin Name: T5 404 Tools
  * Plugin URI:  https://github.com/toscho/T5-404-Tools
