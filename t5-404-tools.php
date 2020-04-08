@@ -1,26 +1,21 @@
 <?php # -*- coding: utf-8 -*-
 /**
  * Plugin Name: T5 404 Tools
- * Plugin URI:  https://github.com/toscho/T5-404-Tools
+ * Plugin URI:  https://github.com/thefuxia/T5-404-Tools
  * Description: Sends an email to the admin email adress for each 404 request not coming from Google or Yahoo. Serves a 404 image for image requests.
  * Version:     2012.08.23
  * Required:    3.3
- * Author:      Thomas Scholz <info@toscho.de>
- * Author URI:  http://toscho.de
+ * Author:      Fuxia Scholz <hallo@fuxia.me>
+ * Author URI:  https://fuxia.me
  * License:     MIT
  * License URI: http://www.opensource.org/licenses/mit-license.php
  */
-
-// Not a WordPress context? Stop.
-! defined( 'ABSPATH' ) and exit;
 
 // Wait until last useful moment.
 add_filter( '404_template', array ( 'T5_404_Tools', 'init' ) );
 add_filter( 'plugin_row_meta', array( 'T5_404_Tools', 'add_feedback_link' ), 10, 2 );
 /**
  * Enhance 404 request handling. Besides that, just a poor man’s namespace. :)
- *
- * @author Thomas Scholz, <info@toscho.de>
  */
 class T5_404_Tools
 {
